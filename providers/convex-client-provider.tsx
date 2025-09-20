@@ -1,8 +1,20 @@
 'use client';
 
-import { ClerkProvider, useAuth } from '@clerk/nextjs';
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  useAuth,
+} from '@clerk/nextjs';
 import { ConvexProviderWithClerk } from 'convex/react-clerk';
-import { AuthLoading, Authenticated, ConvexReactClient } from 'convex/react';
+import {
+  AuthLoading,
+  Authenticated,
+  ConvexReactClient,
+  Unauthenticated,
+} from 'convex/react';
+import { Loading } from '@/components/auth/loading';
+import { Button } from '@/components/ui/button';
 
 interface ConvexClientProviderProps {
   children: React.ReactNode;
@@ -18,7 +30,27 @@ export const ConvexClientProvider = ({
   return (
     <ClerkProvider>
       <ConvexProviderWithClerk useAuth={useAuth} client={convex}>
-        {children}
+        <AuthLoading>
+          <Loading />
+        </AuthLoading>
+
+        <Unauthenticated>
+          <div className='flex flex-col items-center justify-center min-h-screen'>
+            <h1 className='text-2xl font-bold mb-4'>
+              Welcome to Collaborative Whiteboard - Boardly
+            </h1>
+            <div className='flex items-center gap-4'>
+              <SignInButton mode='modal'>
+                <Button>Sign In</Button>
+              </SignInButton>
+              <SignUpButton mode='modal'>
+                <Button>Sign Up</Button>
+              </SignUpButton>
+            </div>
+          </div>
+        </Unauthenticated>
+
+        <Authenticated>{children}</Authenticated>
       </ConvexProviderWithClerk>
     </ClerkProvider>
   );
