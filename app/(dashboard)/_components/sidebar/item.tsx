@@ -26,7 +26,7 @@ export const Item = ({ id, name, imageUrl }: ItemProps) => {
 
   return (
     <div className='aspect-square relative'>
-      <Hint label={name} side='right' align='start' sideOffset={10}>
+      <Hint label={name} side='right' align='start' sideOffset={18}>
         <Image
           fill
           src={imageUrl}
