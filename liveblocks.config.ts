@@ -7,10 +7,10 @@ import { createRoomContext } from '@liveblocks/react';
 declare global {
   interface Liveblocks {
     // Each user's Presence, for useMyPresence, useOthers, etc.
-    // Presence: {
-    //   cursor: { x: number; y: number } | null;
-    //   selection?: string[];
-    // };
+    Presence: {
+      cursor: { x: number; y: number } | null;
+      // selection?: string[];
+    };
 
     // The Storage tree for the room, for useMutation, useStorage, etc.
     // Storage: {
@@ -48,6 +48,7 @@ declare global {
 }
 
 const client = createClient({
+  throttle: 16,
   authEndpoint: '/api/liveblocks-auth',
 });
 
@@ -75,20 +76,3 @@ export const {
     useErrorListener,
   },
 } = createRoomContext(client);
-
-// export {
-//   client,
-//   RoomProvider,
-//   useMyPresence,
-//   useOthers,
-//   useSelf,
-//   useStorage,
-//   useMutation,
-//   useHistory,
-//   useUndo,
-//   useRedo,
-//   useCanUndo,
-//   useCanRedo,
-//   useBroadcastEvent,
-//   useEventListener,
-// };
