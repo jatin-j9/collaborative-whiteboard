@@ -100,7 +100,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
 
       setMyPresence({ cursor: current });
     },
-    []
+    [camera]
   );
 
   const onPointerLeave = useMutation(({ setMyPresence }) => {
@@ -145,7 +145,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
       >
         <g
           style={{
-            transform: `transform(${camera.x}px, ${camera.y}px)`,
+            transform: `translate(${camera.x}px, ${camera.y}px)`,
           }}
         >
           {layerIds.map((layerId) => (
