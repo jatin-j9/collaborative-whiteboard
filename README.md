@@ -9,6 +9,26 @@ A real-time collaborative whiteboard application built with Next.js, enabling mu
 ![Convex](https://img.shields.io/badge/Convex-1.27.1-orange?style=flat-square)
 ![Liveblocks](https://img.shields.io/badge/Liveblocks-3.7.1-purple?style=flat-square)
 
+## 📚 Learning Project
+
+This project was built as part of a comprehensive learning journey to master modern web development technologies and real-time collaboration patterns. It follows a detailed tutorial that covers:
+
+- **Tutorial Source**: Build a Real-Time Miro Clone With Nextjs, React, Tailwind (2024) by Code With Antonio
+- **YouTube Link**: https://youtu.be/ADJKbuayubE?si=4y40b2rFS6FFStAq
+
+### What I Learned
+
+- Real-time collaboration implementation using Liveblocks
+- Serverless backend development with Convex
+- Advanced React patterns and custom hooks
+- TypeScript integration in full-stack applications
+- Authentication and multi-tenancy with Clerk
+- Canvas manipulation and drawing algorithms
+- State management with Zustand
+- Modern UI development with Radix UI and Tailwind CSS
+
+This project demonstrates practical application of cutting-edge web technologies and serves as a foundation for building scalable collaborative applications.
+
 ## ✨ Features
 
 ### 🎯 Core Functionality
